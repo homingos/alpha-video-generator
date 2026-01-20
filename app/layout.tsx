@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Video Background Remover | WebGL Chroma Key",
-  description: "Remove green or blue screen backgrounds from your videos using GPU-accelerated WebGL processing",
+  title: "Alpha Video Generator | FFmpeg Chroma Key",
+  description: "Remove green or blue screen backgrounds from your videos using FFmpeg WASM - runs entirely in your browser",
 };
 
 export default function RootLayout({
