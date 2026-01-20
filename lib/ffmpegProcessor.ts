@@ -158,9 +158,14 @@ export class FFmpegProcessor {
 
         onProgress?.(100, 'Complete!');
 
+        // Convert Uint8Array to proper format for Blob creation
+        // Create new Uint8Array to ensure proper ArrayBuffer type
+        const maskBytes = new Uint8Array(maskData);
+        const resultBytes = new Uint8Array(resultData);
+
         return {
-            mask: new Blob([maskData], { type: 'video/webm' }),
-            result: new Blob([resultData], { type: 'video/webm' }),
+            mask: new Blob([maskBytes] as BlobPart[], { type: 'video/webm' }),
+            result: new Blob([resultBytes] as BlobPart[], { type: 'video/webm' }),
         };
     }
 }
